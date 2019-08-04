@@ -1,109 +1,72 @@
+//Topic List
+
+// Makes every other topic in the topic list tertiary colour.
 .topic-list > tbody > tr:nth-child(odd) {
-    background-color: white;
+    background-color: $tertiary;
 }
 
-
-.topic-list > tbody tr:not(.last-visit):not(.topic-list-item-separator) td {
-    border-bottom: 1px solid #eee;
+//Removes the 1px border below each topic in the topic list.
+.topic-list > tbody > tr {
+    border-bottom: 0px;
 }
 
+//Increases the font-weight of topic titles in the topic list.
 .topic-list a.title:not(.badge-notification) {
-    color: #3b5998;
     font-weight: normal;
     font-family: 'Helvetica Neue', Helvetica, Arial, Utkal, sans-serif;
     font-size: 18px;
 }
 
+//Adds underline on topic title hover in topic list.
 .topic-list a.title:not(.badge-notification):hover {
     text-decoration: underline;
 }
 
+//Reduces the size of the creator font.
 .topic-list .creator, .topic-list .editor {
-    font-size: 13px;
+    font-size: 14px;
     display: block;
-    margin-top: 3px;
+    margin-top: 0px;
 }
 
-.topic-list .main-link {
-    width: auto;
-}
-
+//Sets the topic creator color to primary.
 .topic-list {
     td, .creator a, .editor a {
-        color: #888;
+        color: $primary;
     }
 }
 
+//Positions the last post avatar in the center of the topic 
 .topic-list td {
     padding-bottom: 10px;
 }
 
-.topic-list th {
-    color: black;
-    background-color: #fafafa;
-}
-.topic-list {
-    border-top: none;
-}
-
+//Not sure but breaks things.
 .topic-list td:first-of-type {
     padding-bottom: 10px;
     padding-left: 10px;
     padding-top: 10px;
 }
 
-.topic-list tr.topic-list-item-separator td:first-of-type {
-    padding: 0;
+//Adds a border at the bottom of the topic list to prevent it looking floaty.
+tbody {
+  border-bottom: 3px solid $primary-low;
 }
 
- 
-.topic-list {
-    .fa-tag {
-        opacity: 0.7;
-        font-size: 10px;
-        margin-right: -2px;
-    }
-    .num.posts-map {
-        position: relative;
-        font-size: 17px;
-        a {
-            color: #888 !important;
-            font-weight: normal;
-        }
-        a.heatmap-high {
-            color: #c66 !important;   
-        }
-        width: 100px;
-    }
-}
-
+//Makes last post block wider
 .topic-list td.last-post, .topic-list th.activity {
     width: 160px;
     .relative-date {
-        color: #666;
+        color: $primary;
     }
 }
 
+//Spaces out the original post date from the OP name.
 .topic-list .creator .relative-date {
     margin-left: 8px;
 }
 
-.badge-category-bg {
-    opacity: 0.8;
-}
-
-.topic-list .badge-wrapper.bar {
-    .badge-category {
-      color: #9a9a9a !important;
-      font-weight: 600;
-      font-size: 12px;
-      padding: 2px 6px;
-    }
-    .badge-category-bg {
-        top: -1px;
-    }
-}
-
+//Something to do with last post block
 .last-post {
     .poster-avatar {
         margin-right: 10px;
@@ -113,56 +76,12 @@
     }
 }
 
+//Spaces out the posts coloumn
 .topic-list .posts {
     width: auto;
 }
 
-/* topic page */
-#topic-progress {
-    background-color: #f1f1f1;
-    color: #666;
-    font-weight: normal;
-    .bg {
-       background-color: #bee9e9;
-    }
-}
-
-nav.post-controls button.has-like {
-    color: #08c;
-}
-
-.badge-wrapper.bullet span.badge-category {
-    color: #333 !important;
-}
-
-.creator .badge-wrapper.bullet span.badge-category {
-    color: #888 !important;
-    margin-top: -2px;
-}
-
+//Makes avatars more square
 img.avatar {
     border-radius: 3px;
-}
-
-#suggested-topics td.main-link {
-    width: 500px;
-}
-
-.topic-list a.title.visited:not(.badge-notification) {
-    color: #6644aa;
-}
-
-
-.topic-list-item .discourse-tags {
-    font-size: 0.75em;
-    display: inline-block;
-    margin-left: 5px;
-}
-
-body {
-.topic-list-item.visited a.badge-wrapper, 
-.latest-topic-list-item.visited a.badge-wrapper, 
-.category-topic-link.visited a.badge-wrapper {
-    opacity: 1;
-}
 }

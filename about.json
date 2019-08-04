@@ -1,5 +1,21 @@
 {
   "name": "Sam's Simple Theme",
   "about_url": "https://meta.discourse.org/t/sams-personal-minimal-topic-list-design/23552",
-  "license_url": "https://github.com/SamSaffron/discourse-simple-theme/blob/master/LICENSE.txt"
+  "license_url": "https://github.com/SamSaffron/discourse-simple-theme/blob/master/LICENSE.txt",
+  
+  "color_schemes": {
+          "Maker Light": {
+              "primary": "333333",
+              "secondary": "F8FAFC",
+              "tertiary": "E4F6F2",
+              "quaternary": "179b8c",
+              "header_background": "179b8c",
+              "header_primary": "333333",
+              "highlight": "00DDC3",
+              "danger": "96000e",
+              "success": "1ca551",
+              "love": "f50057"
+        }
+    }
 }
+
