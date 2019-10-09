@@ -1,0 +1,234 @@
+
+$maker-teal: #1aaa9b;
+$maker-orange: #f5b13d;
+$maker-blue: #08529b;
+$headline: #291a42;
+$body: #53546a;
+
+@mixin boxShadow {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 0 0 0 rgba(0, 0, 0, 0.12);
+}
+
+
+// // TOPIC LIST
+
+// Top and bottom of the table border and border below each topic.
+.topic-list > tbody {
+    border-top: 3px solid lighten($primary, 40%);
+    border-bottom: 3px solid lighten($primary, 40%);
+    tr {
+        border-bottom: 1px solid lighten($primary, 40%);
+    }
+}
+
+// Add drop shadow to lists
+.category-list,
+.topic-list,
+.latest-topic-list {
+  @include boxShadow;
+  background-color: lighten($secondary, 10%);
+  padding-right: 5px;
+}
+
+//create conversation cards
+.topic-body {
+  @include boxShadow;
+  background-color: lighten($secondary, 10%);
+  margin-top: 10px;
+  border-radius: 2px;
+  padding: 12px 20px 0 20px;
+}
+
+// Remove the border above avatars for conversation cards
+.topic-avatar {
+    border-top: none;
+}
+
+// Leave space for the time gap div
+.time-gap {
+    margin-top: 8px;
+}
+
+// rows more card-like
+.topic-list-item
+.topic-list-item-separator {
+    background-color: hsl(210,33%,98%);
+}
+
+.pinned {
+    background-color: lighten($tertiary, 45%);
+}
+
+// Increases the font-weight of topic titles in the topic list.
+.topic-list a.title:not(.badge-notification) {
+    font-weight: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, Utkal, sans-serif;
+    font-size: 18px;
+}
+
+// Adds underline on topic title hover in topic list.
+.topic-list a.title:not(.badge-notification):hover {
+    text-decoration: underline;
+}
+
+// Reduces the size of the creator font.
+.topic-list .creator, .topic-list .editor {
+    font-size: 14px;
+    display: block;
+    margin-top: 0px;
+}
+
+// Sets the topic creator color to primary.
+.topic-list {
+    td, .creator a, .editor a {
+        color: $primary;
+    }
+}
+
+// Positions the last post avatar in the center of the topic 
+.topic-list td {
+    padding-bottom: 10px;
+}
+
+// Not sure but breaks things.
+.topic-list td:first-of-type {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+// Makes last post block wider
+.topic-list td.last-post, .topic-list th.activity {
+    width: 160px;
+    .relative-date {
+        color: $primary;
+    }
+}
+
+// Spaces out the original post date from the OP name.
+.topic-list .creator .relative-date {
+    margin-left: 8px;
+}
+
+// Something to do with last post block
+.last-post {
+    .poster-avatar {
+        margin-right: 10px;
+    }
+    .poster-avatar, .poster-info {
+        float: left;
+    }
+}
+
+// Spaces out the posts coloumn
+.topic-list .posts {
+    width: auto;
+}
+
+// Makes avatars more square
+img.avatar {
+    border-radius: 3px;
+}
+
+// // OTHER
+
+// Create Topic Button
+#create-topic {
+    color: $quaternary;
+    background: transparent;
+    border: 1px solid $quaternary;
+    svg {
+        color: $quaternary;
+    }
+    &:hover {
+        background-color: $quaternary;
+        color: white !important;
+        border-radius: 2px;
+        svg {
+            color: white !important;
+        }
+    }
+}
+
+// soften the buttons a smidge
+.btn {
+    border-radius: 2px;
+}
+
+// make the search results cards
+.fps-result {
+    padding: 5px;
+    border: 1px solid hsla(240,10%,90%,1);
+    border-radius: 5px;
+    @include boxShadow;
+    margin-bottom: 10px;
+    background-color: hsl(210,33%,98%);
+}
+
+// Topic list - Filters
+.nav-pills > li {
+    border-radius: 100px;
+    border: 1px solid #1aab9b;
+    background: transparent;
+    overflow: hidden;
+
+    a {
+        color: #1aab9b;
+        &:hover {
+            background-color: #1aab9b;
+            color: white;
+            border-radius: 100px;
+            border: 0px;
+        }
+        &:active {
+            color: #f8fafc;
+            background-color: #1aab9b;
+            border-radius: 100px;
+        }
+    }
+    &:last-of-type {
+        display: none;
+    }    
+}
+
+// Makes links in the hamburger menu darker
+.header-dropdown-toggle {
+    .d-icon {
+        color: #f1f1f1;
+    }
+
+    &:hover {
+        border-radius: 15px;
+    }
+}
+
+// Menu links colors
+.menu-panel li a.widget-link {
+    color: $quaternary;
+    &:hover {
+        background-color: lighten($tertiary, 30%);
+        border-radius: 2px;
+        color: $maker-blue;
+    }
+}
+
+// when the title is in the header change the color
+.d-header {
+    .topic-link {
+        color: white;
+    }
+    .category-name {
+        color: white;
+    }
+    .menu-panel {
+        .category-name {
+            color: $quaternary;
+        }
+    }
+}
+
+// make visited links visible again
+a:visited {
+    color: $quaternary;
+}
+
