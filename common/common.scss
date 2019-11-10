@@ -10,7 +10,7 @@ $body: #53546a;
 }
 
 
-// // TOPIC LIST
+// TOPIC LIST
 
 // Top and bottom of the table border and border below each topic.
 .topic-list > tbody {
@@ -42,6 +42,7 @@ $body: #53546a;
 // Remove the border above avatars for conversation cards
 .topic-avatar {
     border-top: none;
+    margin-right: 10px;
 }
 
 // Leave space for the time gap div
@@ -73,6 +74,7 @@ $body: #53546a;
 
 // Reduces the size of the creator font.
 .topic-list .creator, .topic-list .editor {
+    margin-top: 8px;
     font-size: 14px;
     display: block;
     margin-top: 0px;
@@ -92,9 +94,7 @@ $body: #53546a;
 
 // Not sure but breaks things.
 .topic-list td:first-of-type {
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding: 15px;
 }
 
 // Makes last post block wider
@@ -110,14 +110,28 @@ $body: #53546a;
     margin-left: 8px;
 }
 
+.badge-category-bg {
+    margin-left: 10px;
+}
+
+.topic-status-info {
+    border-top: none;
+}
+
 // Something to do with last post block
 .last-post {
     .poster-avatar {
         margin-right: 10px;
+        margin-top: 4px;
     }
     .poster-avatar, .poster-info {
         float: left;
     }
+}
+
+.badge-wrapper.bullet .badge-category-parent-bg, 
+.badge-wrapper.bullet .badge-category-bg {
+    border-radius: 100px;
 }
 
 // Spaces out the posts coloumn
@@ -130,7 +144,37 @@ img.avatar {
     border-radius: 3px;
 }
 
-// // OTHER
+.select-kit.combo-box.category-drop .select-kit-body,
+.select-kit.is-expanded .select-kit-body {
+    border-radius: 4px;
+}
+
+.category-list {
+    .category {
+        padding-left: 15px;
+    }
+    .topics {
+        padding-right: 15px;
+    }
+}
+   
+// POLLS
+
+.poll {
+    border: 1px solid $maker-teal !important;
+
+    .poll-info {
+        color: $maker-teal !important;
+        border-left: 1px solid $maker-teal !important;
+    }
+    .poll-buttons {
+        border-top: 1px solid $maker-teal !important;
+    }
+}
+
+
+
+// OTHER
 
 // Create Topic Button
 #create-topic {
@@ -167,7 +211,7 @@ img.avatar {
 
 // Topic list - Filters
 .nav-pills > li {
-    border-radius: 100px;
+    border-radius: 150px;
     border: 1px solid #1aab9b;
     background: transparent;
     overflow: hidden;
@@ -177,13 +221,12 @@ img.avatar {
         &:hover {
             background-color: #1aab9b;
             color: white;
-            border-radius: 100px;
-            border: 0px;
+            border-radius: 150px;
         }
         &:active {
             color: #f8fafc;
             background-color: #1aab9b;
-            border-radius: 100px;
+            border-radius: 150px;
         }
     }
     &:last-of-type {
@@ -199,6 +242,43 @@ img.avatar {
 
     &:hover {
         border-radius: 15px;
+    }
+    &.active {
+        .icon {
+            color: #f1f1f1;
+            background-color: $maker-teal !important;
+            border: 1px solid $maker-teal !important;
+            .d-icon {
+                color: #f1f1f1 !important;
+            }
+        }
+        
+    }
+}
+
+.d-header-icons {
+    .icon {
+        &:active {
+            color: #f1f1f1;
+            background-color: $maker-teal !important;
+            border: 1px solid $maker-teal !important;
+            .d-icon {
+                color: #f1f1f1 !important;
+            }
+        }
+        &:hover {
+            color: #f1f1f1;
+            background-color: $maker-teal !important;
+            border: 1px solid $maker-teal !important;
+            .d-icon {
+                color: #f1f1f1 !important;
+            }
+        }
+        &:focus {
+            color: #f1f1f1;
+            background-color: $maker-teal !important;
+            border: 1px solid $maker-teal !important;
+        }
     }
 }
 
@@ -232,3 +312,13 @@ a:visited {
     color: $quaternary;
 }
 
+// SEARCH PAGE
+.search-container .search-advanced-sidebar {
+    .search-advanced-title {
+        background-image: linear-gradient(hsla(210,50%,90%,1),hsla(210,50%,86%,1));
+        color: $maker-blue;
+    }
+    .search-advanced-filters {
+        background-image: linear-gradient(hsla(210,50%,90%,80%),hsla(210,50%,86%,60%));
+    }
+}
