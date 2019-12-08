@@ -1,0 +1,20 @@
+@function brightness($color) {
+  @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114));
+}
+
+@function color-chooser($dark, $light) {
+  @if brightness($primary) > brightness($secondary) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+@function color-dynamic($color) {
+  @if lightness($color) > 75 {
+    @return $primary;
+  } @else {
+    @return #ffffff;
+  }
+}
+

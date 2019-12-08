@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono|Roboto+Slab');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/brands.css');
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: $font-family-sans-serif;
+  font-size: initial;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: initial;
+}
+
+
+
+// Form
+
+button,
+input,
+label,
+select,
+textarea {
+  line-height: inherit;
+}
+
+
+
+// Typography
+
+acronym[title],
+abbr[title] {
+  cursor: help;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+// 1. Make sure the text does not overlay the `format-quote` icon added to the top-left and bottom-right corners
+blockquote {
+  border-left: 0;
+  margin: 0 0 $spacer-y;
+  padding: $material-icon-size ($material-icon-size * 2); // 1
+  position: relative;
+
+  &::after,
+  &::before {
+    @extend %material-icons;
+
+    color: color-chooser($white-secondary, $black-secondary);
+    content: 'format_quote';
+    position: absolute;
+  }
+
+  &::after {
+    right: ($material-icon-size / 2);
+    bottom: ($material-icon-size / 2);
+  }
+
+  &::before {
+    top: ($material-icon-size / 2);
+    left: ($material-icon-size / 2);
+    transform: rotate(180deg);
+  }
+}
+
+dd {
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+dl {
+  margin-top: 0;
+  margin-bottom: $spacer-y;
+}
+
+dt {
+  font-weight: bolder;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacer-y-inline;
+}
+
+h1 {
+  @include typography-h1;
+}
+
+h2 {
+  @include typography-h2;
+}
+
+h3 {
+  @include typography-h3;
+}
+
+h4 {
+  @include typography-h4;
+}
+
+h5 {
+  @include typography-h5;
+}
+
+h6 {
+  @include typography-h6;
+}
+
+hr {
+  border-top-color: color-chooser($white-divider, $black-divider);
+  margin: $spacer-y 0;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: $spacer-y;
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $spacer-y;
+}
+
+small {
+  font-size: $font-size-sm;
+}

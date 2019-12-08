@@ -1,0 +1,40 @@
+.list-controls {
+  margin-top: 0;
+
+  .categories-admin-dropdown.select-kit {
+    margin: 0 0 $spacer-sm $spacer-sm;
+  }
+
+  .nav {
+    > li {
+      &:last-child {
+        margin-right: 0;
+      }
+
+      > a {
+        @include btn-raised;
+
+        opacity: 1;
+      }
+    }
+
+    li {
+      margin-top: 0;
+    }
+  }
+
+  .nav-pills .drop {
+    @include dropdown-menu;
+
+    li {
+      margin: 0;
+      padding: 0;
+
+      a {
+        @include dropdown-link;
+
+        color: inherit;
+      }
+    }
+  }
+}

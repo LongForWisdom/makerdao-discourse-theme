@@ -1,0 +1,58 @@
+section {
+  &.about {
+    margin-bottom: $spacer-y;
+
+    &.admins {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: ($spacer-x * -1);
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-bottom: $spacer-y-inline;
+      width: 100%;
+    }
+
+    table {
+      td {
+        @include tbody-cell;
+      }
+
+      th {
+        @include thead-cell;
+      }
+    }
+  }
+}
+
+.body-page {
+  font-size: inherit;
+  max-width: $topic-body-width;
+
+  .static-faq &,
+  .static-privacy &,
+  .static-tos & {
+    [itemprop='mainContentOfPage'] {
+      @include card;
+
+      margin-bottom: $spacer-y;
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+
+      > p:first-child + h2 {
+        margin-top: ($spacer-y * -1);
+      }
+    }
+  }
+
+  li {
+    margin-bottom: 0;
+  }
+
+  .nav-pills {
+    margin-bottom: $spacer-y;
+  }
+}

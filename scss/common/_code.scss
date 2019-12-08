@@ -1,0 +1,80 @@
+code,
+kbd,
+pre,
+samp {
+  font-family: $font-family-monospace;
+}
+
+code {
+  background-color: color-chooser($code-bg-dark, $code-bg-light);
+  border-radius: $code-border-radius;
+  color: color-chooser($code-color-dark, $code-color-light);
+  font-size: $code-font-size;
+  padding: $code-padding;
+}
+
+kbd {
+  background-color: $kbd-bg;
+  border-radius: $code-border-radius;
+  color: $kbd-color;
+  font-size: $code-font-size;
+  padding: $code-padding;
+
+  kbd {
+    font-size: 100%;
+    padding: 0;
+  }
+}
+
+pre {
+  background-color: color-chooser($code-bg-dark, $code-bg-light);
+  border-radius: $code-border-radius;
+  color: unquote('$primary');
+  display: block;
+  font-size: $font-size-base;
+  margin-top: 0;
+  margin-bottom: $spacer-y;
+  padding: $pre-padding;
+
+  blockquote &,
+  .admin-interface &,
+  .onebox & {
+    background-color: color-chooser($light-active, $dark-active);
+  }
+
+  code {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+  }
+}
+
+
+
+// Styles for 'COPY TO CLIPBOARD' button for code blocks
+// https://github.com/Daemonite/discourse-clipboard
+
+.bd-clipboard {
+  .code-highlight & {
+    margin-right: $spacer-x-inline;
+    right: ($card-padding-x * -1);
+  }
+}
+
+.hljs {
+  color: unquote('$primary');
+  padding: $pre-padding;
+
+  pre & {
+    padding: 0;
+  }
+
+  .code-highlight & {
+    margin: ($card-padding-y * -1) ($card-padding-x * -1);
+    padding-top: $card-padding-y;
+    padding-bottom: $card-padding-y;
+    padding-left: $card-padding-x;
+  }
+}

@@ -1,0 +1,148 @@
+.change-timestamp,
+.poll-ui-builder {
+  #date-container {
+    line-height: 1;
+
+    .pika-single {
+      margin-top: 0;
+    }
+  }
+
+  .date-picker {
+    margin-bottom: 0;
+  }
+}
+
+.date-picker {
+  text-align: left;
+}
+
+.pika-button {
+  @include btn-base;
+
+  border-radius: 50%;
+  font-weight: normal;
+  margin: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
+  text-align: center;
+  width: $btn-height;
+
+  @include hover {
+    background-color: color-chooser($btn-bg-hover-dark, $btn-bg-hover-light);
+    border-radius: 50%;
+    color: color-chooser($btn-color-dark, $btn-color-light);
+  }
+
+  .is-disabled & {
+    color: color-chooser($btn-color-disabled-dark, $btn-color-disabled-light);
+    opacity: 1;
+  }
+
+  .is-selected & {
+    border-radius: 50%;
+    box-shadow: none;
+    font-weight: normal;
+  }
+}
+
+.pika-label {
+  background-color: transparent;
+  font-weight: normal;
+  padding: 0 $spacer-x-inline;
+}
+
+.pika-lendar {
+  margin: 0;
+  padding: $picker-padding-y $picker-padding-x;
+  width: ($picker-cell-size * 7 + $picker-padding-x * 2);
+}
+
+.pika-next,
+.pika-prev {
+  background-image: none;
+  border-radius: $btn-border-radius;
+  height: $btn-height;
+  line-height: 1;
+  margin: 0;
+  opacity: 1;
+  padding: $btn-padding-y 0;
+  text-indent: 100%;
+  transition-duration: $transition-duration;
+  transition-property: background-color, color;
+  transition-timing-function: $transition-timing-function;
+  width: $btn-height;
+
+  &::before {
+    position: absolute;
+    top: $btn-padding-y;
+    left: (($btn-height - $material-icon-size) / 2);
+    text-indent: 0;
+  }
+
+  &:hover {
+    background-color: color-chooser($btn-bg-hover-dark, $btn-bg-hover-light);
+  }
+
+  &.is-disabled {
+    color: color-chooser($btn-color-disabled-dark, $btn-color-disabled-light);
+    opacity: 1;
+    pointer-events: none;
+  }
+}
+
+.pika-next {
+  @include material-icons('keyboard_arrow_right');
+
+  margin-left: auto;
+}
+
+.pika-prev {
+  @include material-icons('keyboard_arrow_left');
+
+  margin-right: auto !important;
+  order: -1;
+}
+
+.pika-single {
+  border: 0;
+  border-radius: $picker-border-radius;
+  font-family: inherit;
+
+  &.is-bound {
+    background-color: color-chooser($picker-bg-dark, $picker-bg-light);
+    box-shadow: $picker-box-shadow;
+  }
+}
+
+.pika-table {
+  td,
+  th {
+    height: $picker-cell-size !important;
+    text-align: center !important;
+    width: $picker-cell-size !important;
+  }
+
+  th {
+    color: color-chooser($thead-color-dark, $thead-color-light);
+    font-size: $thead-font-size;
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  tr {
+    background-color: transparent !important;
+    border-bottom: 0;
+  }
+}
+
+.pika-title {
+  align-items: center;
+  display: flex;
+
+  select {
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

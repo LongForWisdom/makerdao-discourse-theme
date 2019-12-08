@@ -1,0 +1,28 @@
+.table {
+  @include table;
+
+  tbody {
+    td,
+    th {
+      @include tbody-cell;
+    }
+  }
+
+  thead {
+    td,
+    th {
+      @include thead-cell;
+    }
+  }
+}
+
+tr {
+  @include table-row;
+
+  tbody:last-child &,
+  thead:last-child & {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

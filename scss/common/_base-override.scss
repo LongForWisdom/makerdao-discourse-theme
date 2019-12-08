@@ -1,0 +1,124 @@
+// Override some basic CSS rules from Discourse
+
+input[type='search'] {
+  box-sizing: border-box;
+}
+
+tbody {
+  border-top: 0;
+}
+
+.btn {
+  .d-icon {
+    line-height: inherit;
+    opacity: 1;
+  }
+
+  .fa {
+    margin-right: $spacer-x-inline;
+  }
+}
+
+.btn-flat {
+  .d-icon {
+    opacity: 1;
+  }
+}
+
+.footer-message > :last-child {
+  margin-bottom: 0;
+}
+
+.nav-pills {
+  > li {
+    margin-right: $nav-item-spacer-x;
+
+    &:not(.active) > a:not(.active) {
+      @include active-focus-hover {
+        background-color: color-chooser($white-divider, $black-divider);
+      }
+    }
+
+    &.active > a {
+      opacity: $nav-link-opacity-active;
+    }
+
+    > a {
+      border-radius: $nav-link-border-radius;
+      font-size: $nav-link-font-size;
+      min-height: $nav-link-height;
+      padding: $nav-link-padding-y $nav-link-padding-x;
+      transition-duration: $transition-duration;
+      transition-property: background-color, color, opacity;
+      transition-timing-function: $transition-timing-function;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &.active {
+        opacity: $nav-link-opacity-active;
+      }
+
+      .d-icon {
+        font-size: ($nav-link-font-size - 1) !important;
+        margin-right: $spacer-x-inline;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.nav-stacked {
+  background-color: transparent;
+
+  a {
+    border-radius: $nav-link-border-radius;
+    font-size: $nav-link-font-size;
+    opacity: $nav-link-opacity;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+    transition-duration: $transition-duration;
+    transition-property: background-color, color, opacity;
+    transition-timing-function: $transition-timing-function;
+
+    @include active-focus-hover {
+      opacity: $nav-link-opacity-active;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.active {
+      opacity: $nav-link-opacity-active;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .d-icon {
+      font-size: ($nav-link-font-size - 1) !important;
+      margin-right: $spacer-x-inline;
+    }
+  }
+
+  li {
+    border-bottom: 0;
+    margin-bottom: $nav-item-spacer-y;
+
+    &.indent {
+      padding-left: $nav-link-padding-x;
+    }
+  }
+
+  .count {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .glyph {
+    margin-right: $spacer-x-inline;
+    width: auto;
+  }
+}

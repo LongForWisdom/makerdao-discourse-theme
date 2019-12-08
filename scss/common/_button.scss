@@ -1,0 +1,178 @@
+// Flat button
+
+.btn-flat {
+  @include btn-base;
+
+  .d-icon {
+    font-size: ($btn-font-size - 1) !important;
+  }
+}
+
+
+
+// Raised button
+
+.btn {
+  @include btn-base;
+  @include btn-raised;
+
+  &:hover,
+  &.btn-hover {
+    .discourse-no-touch & {
+      .d-icon {
+        color: inherit;
+      }
+    }
+  }
+
+  .d-icon {
+    color: inherit;
+    font-size: ($btn-font-size - 1) !important;
+  }
+}
+
+.btn-danger {
+  background-color: unquote('$danger');
+  color: color-dynamic(unquote('$danger'));
+
+  &:hover,
+  &.btn-hover {
+    .discourse-no-touch & {
+      background-color: unquote('$danger');
+      color: color-dynamic(unquote('$danger'));
+    }
+  }
+
+  &:focus {
+    background-color: unquote('$danger');
+    color: color-dynamic(unquote('$danger'));
+  }
+
+  &:active,
+  &.btn-active {
+    &,
+    .discourse-no-touch & {
+      background-color: unquote('$danger');
+      color: color-dynamic(unquote('$danger'));
+    }
+  }
+}
+
+.btn-primary {
+  background-color: unquote('$tertiary');
+  color: color-dynamic(unquote('$tertiary'));
+
+  &:hover,
+  &.btn-hover {
+    .discourse-no-touch & {
+      background-color: unquote('$tertiary');
+      color: color-dynamic(unquote('$tertiary'));
+    }
+  }
+
+  &:focus {
+    background-color: unquote('$tertiary');
+    color: color-dynamic(unquote('$tertiary'));
+  }
+
+  &:active,
+  &.btn-active {
+    &,
+    .discourse-no-touch & {
+      background-color: unquote('$tertiary');
+      color: color-dynamic(unquote('$tertiary'));
+    }
+  }
+}
+
+
+
+// Size
+
+.btn-large {
+  @include btn-lg;
+
+  .d-icon {
+    font-size: ($btn-font-size-lg - 1) !important;
+  }
+}
+
+.btn-small,
+.btn-xsmall {
+  @include btn-sm;
+
+  .d-icon {
+    font-size: ($btn-font-size-sm - 1) !important;
+  }
+}
+
+
+
+// Social button
+
+.btn-social {
+  color: $white-primary;
+}
+
+
+// Nav Pills
+
+.nav-pills > li {
+  border: 1px solid unquote('$primary');
+  border-radius: 150px;
+  display: flex;
+  margin-right: 2px;
+  min-width: 100px;
+  transition: .2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &.active {
+    background-color: unquote('$tertiary');
+    border: 1px solid unquote('$tertiary');
+    border-radius: 150px;
+    color: $white-primary;
+
+    > a {
+      color: $white-primary;
+    }
+  }
+
+  &:not(.active) > a:not(.active):active,
+  &:not(.active) > a:not(.active):focus,
+  &:not(.active) > a:not(.active):hover {
+    background: none;
+  }
+
+  a {
+    background: none;
+    color: unquote('$primary');
+    margin: auto;
+    min-height: 30px;
+    padding: 5px 16px;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background: none;
+      color: $white-primary;
+    }
+  }
+
+  &:last-of-type {
+    display: none;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.user-nav.nav-pills .active {
+  color: unquote('$tertiary');
+  font-weight: 500;
+
+  &:hover {
+    color: $white-primary;
+  }
+}

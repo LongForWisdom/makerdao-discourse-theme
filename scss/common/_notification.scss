@@ -1,0 +1,20 @@
+// Alert
+
+.alert {
+  @include card;
+
+  margin-bottom: $spacer-y;
+
+  .close {
+    font-size: inherit;
+    top: .125em;
+    right: 0;
+  }
+}
+
+[id='modal-alert'] {
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  padding: $modal-padding-y $modal-padding-x;
+}

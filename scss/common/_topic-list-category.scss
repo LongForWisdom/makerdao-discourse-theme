@@ -1,0 +1,241 @@
+.aspect-image.category-logo {
+  margin: $spacer-sm $spacer-sm 0 0;
+}
+
+.categories-and-latest,
+.categories-and-top {
+  .discourse-tags .discourse-tag {
+    font-size: $font-size-sm;
+    margin-right: $spacer-sm;
+  }
+}
+
+.categories-and-latest {
+  div {
+    &.categories.column {
+      margin-right: $spacer-x;
+    }
+  }
+
+  .topic-list {
+    .more-topics {
+      td {
+        padding-right: ($tbody-cell-padding-x * 2 - $btn-padding-x / 2);
+      }
+
+      .btn {
+        @include btn-footer;
+      }
+    }
+
+    .posts {
+      margin-bottom: $spacer-xs;
+    }
+  }
+}
+
+.category-boxes,
+.category-boxes-with-topics {
+  margin: 0 ($spacer-x / -2) ($spacer-lg - $spacer-y);
+  width: auto;
+
+  h3 {
+    @include typography-h4;
+
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .category-box {
+    border-radius: $card-border-radius 0 0 $card-border-radius;
+    border-left-width: 2px;
+    margin: 0 ($spacer-x / 2) $spacer-y;
+    width: calc(33.333333% - #{$spacer-x});
+  }
+
+  .category-box-inner {
+    @include card;
+
+    padding: 0;
+  }
+}
+
+.category-boxes-with-topics {
+  .category-box-heading {
+    padding: $card-padding-y $card-padding-x;
+  }
+
+  .featured-topics {
+    padding: 0 $card-padding-x;
+
+    li {
+      border-top: 1px solid color-chooser($white-divider, $black-divider);
+      margin-right: ($card-padding-x * -1);
+      margin-left: ($card-padding-x * -1);
+      padding: $card-padding-y $card-padding-x;
+
+      &::before {
+        display: none;
+      }
+
+      .overflow {
+        max-height: none;
+        white-space: nowrap;
+
+        > div {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    ul {
+      color: color-chooser($white-secondary, $black-secondary);
+    }
+  }
+}
+
+.category-list {
+  @include table;
+
+  tbody {
+    td,
+    th {
+      @include tbody-cell;
+    }
+
+    .category {
+      border-left-width: ($table-border-width * 2);
+
+      h3 {
+        @include typography-h6;
+      }
+    }
+  }
+
+  thead {
+    td,
+    th {
+      @include thead-cell;
+    }
+  }
+
+  .category h3 .d-icon {
+    height: auto;
+    margin-right: $spacer-xs;
+    width: auto;
+  }
+
+  .category-name {
+    line-height: inherit;
+  }
+
+  .subcategories {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+
+    .badge-notification.new-posts {
+      margin-right: $spacer-sm;
+    }
+
+    .badge-wrapper {
+      margin-top: $spacer-xs;
+    }
+  }
+
+  .topics {
+    width: 100px;
+
+    .badge-notification {
+      border-radius: 0;
+      margin-top: $spacer-xs;
+      padding: 0;
+    }
+
+    .value {
+      font-size: inherit;
+    }
+  }
+}
+
+.latest-topic-list {
+  @include table;
+
+  .more-topics,
+  .table-heading {
+    align-items: center;
+    display: flex;
+    min-height: $thead-cell-height;
+  }
+
+  .more-topics {
+    justify-content: flex-end;
+    margin-top: 0;
+    padding: $thead-cell-padding-y ($thead-cell-padding-x * 2 - $card-inner-spacer-x);
+
+    .btn {
+      @include btn-footer;
+      @include btn-raised-reverse;
+    }
+  }
+
+  .table-heading {
+    @include table-row;
+
+    color: color-chooser($thead-color-dark, $thead-color-light);
+    font-size: $thead-font-size;
+    padding: $thead-cell-padding-y ($thead-cell-padding-x * 2);
+  }
+}
+
+.latest-topic-list-item {
+  @include table-row;
+  @include tbody-cell;
+
+  height: auto;
+  min-height: $tbody-cell-height;
+  padding-right: ($thead-cell-padding-x * 2);
+  padding-left: ($thead-cell-padding-x * 2);
+
+  .main-link {
+    font-size: inherit;
+
+    a {
+      &.title {
+        font-weight: $font-weight-h6;
+        padding-top: $tbody-cell-padding-y;
+        padding-bottom: $tbody-cell-padding-y;
+
+        &.visited:not(.badge-notification) {
+          color: color-chooser($tbody-color-dark, $tbody-color-light);
+          font-weight: normal;
+        }
+      }
+    }
+
+    .bottom-row .discourse-tags {
+      display: inline-block;
+    }
+
+    .top-row {
+      font-size: inherit;
+      margin-bottom: $spacer-xs;
+    }
+  }
+
+  .topic-poster {
+    width: ($material-icon-size + $tbody-cell-padding-x);
+
+    .avatar {
+      height: $material-icon-size;
+      width: $material-icon-size;
+    }
+  }
+
+  .topic-stats {
+    margin-left: $tbody-cell-padding-x;
+  }
+}
