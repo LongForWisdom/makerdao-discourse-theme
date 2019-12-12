@@ -1,0 +1,74 @@
+#reply-control {
+  &.open {
+    max-height: 100vh;
+    min-height: 100vh;
+  }
+
+  .btn-primary {
+    margin-bottom: 0;
+  }
+
+  .category-input {
+    margin-top: ($card-inner-spacer-y / 2);
+    padding-right: 0;
+    padding-left: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .contents {
+    min-width: 0;
+
+    .d-editor-input {
+      border-right: 0;
+      border-bottom: 0;
+      border-left: 0;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    .form-element {
+      display: block;
+    }
+
+    .submit-panel .btn {
+      @include btn-sm;
+
+      max-width: none;
+      padding-right: ($btn-padding-x-sm / 2);
+      padding-left: ($btn-padding-x-sm / 2);
+    }
+  }
+
+  .control-row .reply-to {
+    max-width: calc(50% - #{$material-icon-size + $spacer-sm});
+
+    a {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .grippie::before {
+    display: none;
+  }
+
+  .reply-to .composer-controls {
+    align-items: center;
+    display: flex;
+
+    button {
+      margin-left: $card-inner-spacer-x;
+      padding: 0;
+    }
+  }
+
+  .title-and-category {
+    flex-direction: column;
+  }
+}

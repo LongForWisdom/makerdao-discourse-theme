@@ -1,0 +1,274 @@
+.badge-card {
+  @include card;
+
+  margin-right: 0;
+  margin-bottom: $spacer-y;
+  padding: 0;
+
+  &,
+  &.large,
+  &.medium {
+    flex: 0 0 auto;
+    width: 100%;
+
+    @media (min-width: 569px) {
+      margin-right: $spacer-x;
+      width: calc(50% - #{$spacer-x});
+    }
+
+    @media (min-width: ($container-max-width + 1px)) {
+      width: calc(100% / 3 - #{$spacer-x});
+    }
+
+    &:hover {
+      box-shadow: $card-box-shadow-hover;
+    }
+
+    .badge-contents .badge-link {
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  .badge-contents {
+    min-height: 0;
+
+    .badge-icon {
+      @include typography-h2;
+
+      background-color: color-chooser($card-child-bg-dark, $card-child-bg-light);
+      margin-right: 0;
+      min-width: ($card-padding-x * 2 + $font-size-h2 / $font-size-base * $material-icon-size);
+      padding: $card-padding-y $card-padding-x;
+    }
+
+    .badge-info {
+      min-width: 0;
+      padding: $card-padding-y $card-padding-x;
+
+      h3 {
+        @include typography-h4;
+
+        margin-bottom: ($card-inner-spacer-y / 2);
+      }
+    }
+
+    .badge-info-item {
+      flex-grow: 1;
+      min-width: 0;
+    }
+  }
+
+  .check-display {
+    align-items: center;
+    border-radius: ($material-icon-size / 2);
+    display: flex;
+    font-size: $font-size-base;
+    height: $material-icon-size;
+    justify-content: center;
+    top: ($card-padding-y / 2);
+    left: ($card-padding-x / 2);
+    width: $material-icon-size;
+  }
+
+  .grant-count {
+    color: color-chooser($white-secondary, $black-secondary);
+    font-size: $font-size-base;
+    font-weight: normal;
+    line-height: 1;
+    top: ($card-padding-y / 2);
+    right: ($card-padding-x / 2);
+  }
+}
+
+.badge-grouping {
+  margin-bottom: ($spacer-lg - $spacer-y);
+
+  @media (min-width: 569px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: ($spacer-x * -1);
+  }
+
+  h3 {
+    margin-bottom: $spacer-y;
+  }
+
+  .title {
+    width: 100%;
+  }
+}
+
+.badge-groups {
+  margin: 0;
+}
+
+.badges-granted {
+  width: 100%;
+}
+
+.badges-section {
+  margin-bottom: $spacer-lg;
+
+  @media (min-width: 569px) {
+    margin-right: ($spacer-x * -1);
+  }
+
+  &.top-section {
+    > p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .more {
+        @include btn-base;
+        @include btn-raised;
+      }
+    }
+  }
+
+  > h3,
+  > p {
+    width: 100%;
+
+    @media (min-width: 569px) {
+      width: calc(100% - #{$spacer-x});
+    }
+  }
+}
+
+.show-badge {
+  h1 {
+    margin-bottom: $spacer-lg;
+  }
+}
+
+.show-badge-details {
+  display: block;
+  margin-top: 0;
+  margin-bottom: ($spacer-lg - $spacer-y);
+
+  @media (min-width: 569px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: ($spacer-x * -1);
+  }
+
+  .grant-info-item {
+    margin-bottom: $spacer-y;
+
+    &,
+    &:first-of-type {
+      margin-right: $spacer-x;
+    }
+  }
+}
+
+.user-badges {
+  margin-bottom: $spacer-lg;
+
+  > .ember-view {
+    margin-bottom: ($spacer-lg - $spacer-y);
+
+    @media (min-width: 569px) {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: ($spacer-x * -1);
+    }
+  }
+}
+
+.user-badges-list {
+  @media (min-width: 569px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: ($spacer-x * -1);
+
+    .badge-card {
+      margin-right: $spacer-x;
+      width: calc(50% - #{$spacer-x});
+    }
+  }
+
+  @media (min-width: ($container-max-width + 1)) {
+    .badge-card {
+      width: calc(100% / 3 - #{$spacer-x});
+    }
+  }
+
+  .user-main &.user-content {
+    margin-bottom: ($spacer-lg - $spacer-y);
+  }
+}
+
+.user-info {
+  @include card;
+
+  display: flex;
+
+  &,
+  &.large,
+  &.medium,
+  &.small {
+    flex: 0 0 auto;
+    margin: 0 0 $spacer-y;
+    min-height: 0;
+    width: 100%;
+
+    @media (min-width: 569px) {
+      margin-right: $spacer-x;
+      width: calc(50% - #{$spacer-x});
+    }
+
+    @media (min-width: ($container-max-width + 1px)) {
+      width: calc(100% / 3 - #{$spacer-x});
+    }
+
+    &.badge-info {
+      min-height: 0;
+
+      .granted-on {
+        color: color-chooser($white-hint, $black-hint);
+      }
+    }
+
+    .user-detail {
+      width: auto;
+    }
+
+    .user-image {
+      margin-right: $card-inner-spacer-x;
+      width: auto;
+    }
+  }
+
+  .avatar {
+    height: floor($font-size-base * $line-height-base * 2);
+    width: floor($font-size-base * $line-height-base * 2);
+  }
+
+  .user-detail {
+    flex: 1 1 auto;
+    font-size: inherit;
+    padding-left: 0;
+
+    .name {
+      color: color-chooser($white-secondary, $black-secondary);
+      margin-left: 0;
+    }
+
+    .title {
+      margin-top: 0;
+    }
+
+    .username {
+      a {
+        color: color-chooser($white-secondary, $black-secondary);
+      }
+    }
+  }
+
+  .user-image {
+    padding-right: 0;
+  }
+}

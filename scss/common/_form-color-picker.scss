@@ -1,0 +1,32 @@
+.category-color-editor {
+  .color-title {
+    align-self: center;
+    flex-shrink: 0;
+    margin-right: $spacer;
+    width: auto;
+  }
+
+  .colors-container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin: ($spacer-xs * -1) ($spacer-xs * -1) 0 $spacer;
+    min-width: ($spacer-xs * 2 + (($text-field-height - $spacer-xs) / 2) * 2);
+    padding: 0;
+
+    .colorpicker {
+      border: 0;
+      border-radius: $btn-border-radius;
+      box-shadow: inset 0 0 1px color-chooser($white-primary, $black-primary);
+      font-size: inherit;
+      height: $material-icon-size;
+      margin: $spacer-xs $spacer-xs 0 0;
+      width: $material-icon-size;
+
+      &[style*='background-color: #FFFFFF'] {
+        color: $black-primary;
+      }
+    }
+  }
+}

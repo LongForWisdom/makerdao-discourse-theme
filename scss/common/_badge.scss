@@ -1,0 +1,216 @@
+.badge-group,
+.badge-notification {
+  align-items: center;
+  border-radius: ($font-size-base * $line-height-base / 2);
+  display: inline-flex;
+  font-size: $font-size-sm;
+  justify-content: center;
+  line-height: 1;
+  min-height: ($font-size-base * $line-height-base);
+  min-width: ($font-size-base * $line-height-base);
+  padding: 0;
+
+  &.flagged-posts,
+  &.reviewables {
+    min-width: ($font-size-base * $line-height-base);
+  }
+}
+
+.badge-group {
+  border: 0;
+}
+
+.badge-wrapper {
+  font-size: $font-size-sm;
+  font-weight: normal;
+
+  &.bar {
+    align-items: center;
+    background-color: color-chooser($chip-bg-dark, $chip-bg-light);
+    border-radius: ($chip-height / 2);
+    font-size: $chip-font-size;
+    line-height: $chip-line-height;
+    margin-right: $spacer-x-inline;
+    padding-right: $chip-padding-x;
+    padding-left: $chip-padding-x;
+
+    span {
+      &.badge-category {
+        padding: $chip-padding-y 0;
+      }
+    }
+
+    .badge-category {
+      align-items: center;
+      min-height: $chip-height;
+    }
+
+    .badge-category-bg,
+    .badge-category-parent-bg {
+      padding: 0;
+    }
+
+    .badge-category-bg {
+      margin-right: $chip-inner-spacer-x;
+    }
+  }
+
+  &.box {
+    border-radius: ($chip-height / 2);
+    font-size: $chip-font-size;
+    line-height: $chip-line-height;
+    margin-right: $spacer-x-inline;
+    padding: 0;
+
+    .badge-category {
+      align-items: center;
+      border-radius: ($chip-height / 2);
+      min-height: $chip-height;
+      padding: $chip-padding-y $chip-padding-x;
+    }
+
+    .badge-category-bg {
+      border-radius: ($chip-height / 2);
+    }
+
+    .badge-category-parent-bg {
+      border-radius: ($chip-height / 2);
+      width: calc(100% - #{$chip-inner-spacer-x});
+
+      + .badge-category-bg {
+        left: $chip-inner-spacer-x;
+        width: calc(100% - #{$chip-inner-spacer-x});
+
+        + .badge-category {
+          margin-left: $chip-inner-spacer-x;
+        }
+      }
+    }
+  }
+
+  &.bullet {
+    align-items: center;
+    // background-color: color-chooser($chip-bg-dark, $chip-bg-light);
+    border-radius: ($chip-height / 2);
+    font-size: $chip-font-size;
+    line-height: $line-height-base;
+    margin-right: $spacer-x-inline;
+    padding-right: $chip-padding-x;
+    padding-left: $chip-inner-spacer-x;
+
+    .badge-category {
+      align-items: center;
+      border-radius: ($chip-height / 2);
+      // min-height: $chip-height;
+      // padding: $chip-padding-y 0 $chip-padding-y $chip-inner-spacer-x;
+      min-height: 25px;
+      padding: 2px 0 2px 6px;
+    }
+
+    .badge-category-bg {
+      border-radius: 50%;
+      height: $category-icon-size;
+      margin-right: 0;
+      width: $category-icon-size;
+    }
+
+    .badge-category-parent-bg {
+      border-radius: ($category-icon-size / 2) 0 0 ($category-icon-size / 2);
+      height: $category-icon-size;
+      width: ($category-icon-size / 2);
+
+      + .badge-category-bg {
+        border-radius: 0 ($category-icon-size / 2) ($category-icon-size / 2) 0;
+        width: ($category-icon-size / 2);
+      }
+    }
+  }
+
+  &.none {
+    margin-right: $spacer-x-inline;
+
+    &[href]:hover {
+      box-shadow: none;
+    }
+  }
+
+  .badge-category .d-icon {
+    height: auto;
+    margin-right: $chip-inner-spacer-x;
+    width: auto;
+  }
+}
+
+.badges {
+  align-items: flex-start;
+  display: flex;
+
+  .buttons {
+    float: none;
+    width: auto;
+
+    .delete-link {
+      @include btn-base;
+
+      color: unquote('$danger');
+
+      &:hover,
+      &.btn-hover {
+        .discourse-no-touch & {
+          color: unquote('$danger');
+        }
+      }
+    }
+
+    .saving {
+      margin: $btn-padding-y $spacer-x-inline 0;
+      padding: 0;
+      width: auto;
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+
+  .content-list {
+    ul {
+      margin-bottom: $spacer-y;
+    }
+  }
+
+  .current-badge {
+    margin: 0 0 $spacer-y;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+
+    p {
+      &.help {
+        font-size: $font-size-sm;
+      }
+    }
+
+    .badge-grouping-control .badge-selector {
+      margin-right: $spacer-x-inline;
+    }
+  }
+}
+
+.discourse-tag {
+  &.box {
+    border-radius: $code-border-radius;
+    font-size: $code-font-size;
+    padding: $code-padding;
+  }
+
+  &.bullet::before {
+    font-size: inherit;
+    margin-right: $spacer-x-inline;
+  }
+
+  .discourse-tags & {
+    margin-right: $spacer-x-inline;
+  }
+}

@@ -1,0 +1,8 @@
+@mixin card {
+  background-color: color-chooser($card-bg-dark, $card-bg-light);
+  border: 0;
+  border-radius: $card-border-radius;
+  box-shadow: $card-box-shadow;
+  color: color-chooser($card-color-dark, $card-color-light);
+  padding: $card-padding-y $card-padding-x;
+}

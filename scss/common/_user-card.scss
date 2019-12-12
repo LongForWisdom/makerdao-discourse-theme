@@ -1,0 +1,153 @@
+.user-badge,
+#user-card.show-badges .more-user-badges {
+  align-items: center;
+  background-color: color-chooser($chip-bg-dark, $chip-bg-light);
+  border: 0;
+  border-radius: ($chip-height / 2);
+  box-shadow: none;
+  color: unquote('$primary');
+  display: inline-flex;
+  font-size: $chip-font-size;
+  height: $chip-height;
+  line-height: 1;
+  margin: 0;
+  padding: $chip-padding-y $chip-padding-x;
+  vertical-align: middle;
+
+  @include hover {
+    box-shadow: $chip-box-shadow;
+  }
+
+  .fa {
+    margin-right: $chip-inner-spacer-x;
+    padding-right: 0;
+  }
+}
+
+#user-card {
+  @include card;
+
+  min-height: 0;
+  padding: $card-padding-y $card-padding-x;
+
+  &.no-bg {
+    .card-content {
+      background-color: transparent;
+    }
+  }
+
+  &.show-badges {
+    .badge-section {
+      align-items: center;
+      display: flex;
+      float: none;
+      margin-top: 0;
+      padding-bottom: 0;
+      width: auto;
+
+      .more-user-badges,
+      .user-badge {
+        background-color: color-chooser($chip-bg-dark, $chip-bg-light);
+        border: 0;
+        margin-right: ($card-inner-spacer-x / 2);
+      }
+    }
+
+    .names {
+      flex-grow: 1;
+      height: auto;
+      margin-bottom: ($card-inner-spacer-y / 2);
+      width: auto;
+
+      span {
+        display: block;
+        font-size: inherit;
+        max-width: none;
+        overflow: auto;
+        padding: 0;
+        position: static;
+        width: auto;
+      }
+    }
+  }
+
+  h1 {
+    @include typography-h4;
+
+    margin-bottom: ($card-inner-spacer-y / 2);
+    max-width: none;
+    min-width: 0;
+
+    a {
+      display: inline-flex;
+    }
+
+    i::before {
+      font-size: inherit;
+      line-height: 1;
+      vertical-align: middle;
+    }
+  }
+
+  h2 {
+    @include typography-body;
+
+    margin-bottom: ($card-inner-spacer-y / 2);
+    max-width: none;
+  }
+
+  h3 {
+    @include typography-body;
+  }
+
+  .bio {
+    margin-top: 0;
+    margin-bottom: $card-inner-spacer-y;
+    max-height: ($font-size-body * $line-height-body * 6);
+    width: 100%;
+  }
+
+  .btn {
+    margin: 0 0 1px;
+  }
+
+  .card-content {
+    background-color: color-chooser($black-secondary, $white-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: $header-height;
+    padding: $card-padding-y $card-padding-x;
+  }
+
+  .metadata {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0;
+    padding-bottom: ($card-inner-spacer-y - $spacer-sm);
+
+    h3 {
+      margin-right: $card-inner-spacer-x;
+    }
+  }
+
+  .user-card-avatar {
+    margin-top: 0;
+    margin-right: $card-inner-spacer-x;
+    margin-bottom: $card-inner-spacer-y;
+
+    img {
+      height: ($card-inner-spacer-y / 2 + $font-size-body * $line-height-body + $font-size-h4 * $line-height-h4);
+      width: ($card-inner-spacer-y / 2 + $font-size-body * $line-height-body + $font-size-h4 * $line-height-h4);
+    }
+  }
+
+  .usercard-controls {
+    margin: (($btn-height - $font-size-h4 * $line-height-h4) / -2) ($btn-padding-x / -2) ($card-inner-spacer-y / 2) 0;
+
+    a {
+      display: flex;
+      min-width: 0;
+      text-align: left;
+    }
+  }
+}
