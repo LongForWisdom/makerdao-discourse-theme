@@ -1,9 +1,18 @@
 {
-  "name": "Maker Community Forum",
-  "about_url": "https://meta.discourse.org/t/sams-personal-minimal-topic-list-design/23552",
-  "license_url": "https://github.com/SamSaffron/discourse-simple-theme/blob/master/LICENSE.txt",
-  
+  "about_url": "https://github.com/Daemonite/discourse-material-theme",
   "color_schemes": {
+    "Material Default": {
+      "primary": "212121",
+      "secondary": "ffffff",
+      "tertiary": "e91e63",
+      "quaternary": "3f51b5",
+      "header_background": "3f51b5",
+      "header_primary": "ffffff",
+      "highlight": "eefd54",
+      "danger": "d32f2f",
+      "success": "2e7b32",
+      "love": "e91e63"
+    },
     "Maker Light": {
       "primary": "53546a",                  // Body Gray  | Most text, icons, and borders.
       "secondary": "FFFFFF",                // White      | The main background color, and text color of some buttons.
@@ -15,19 +24,8 @@
       "danger": "96000E",                   // Red        | Highlight color for actions like deleting posts and topics.
       "success": "1CA551",                  // Green      | Used to indicate an action was successful.
       "love": "F50057"                      // Lighter Red| The like button's color.
-    },
-    "Maker Dark": {
-      "primary": "F8FAFC",
-      "secondary": "333333",
-      "tertiary": "E4F6F2",
-      "quaternary": "179b8c",
-      "header_background": "179b8c",
-      "header_primary": "333333",
-      "highlight": "00DDC3",
-      "danger": "96000e",
-      "success": "1ca551",
-      "love": "f50057"
     }
-  }
+  },
+  "license_url": "https://github.com/Daemonite/discourse-material-theme/blob/master/LICENSE",
+  "name": "Material Design for Discourse"
 }
-

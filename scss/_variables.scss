@@ -1,0 +1,479 @@
+// Colour chooser functions
+
+@function color-chooser($dark, $light) {
+  @return unquote('color-chooser(') + $dark + unquote(', ') + $light + unquote(')');
+}
+
+@function color-dynamic($color) {
+  @return unquote('color-dynamic(' + $color + unquote(')'));
+}
+
+
+
+// Table of Contents
+//
+// - Basics
+//   - Colours
+//   - Shadows
+//   - Spacers
+//   - Typography
+//     - Font size
+//     - Font weight
+//     - Letter spacing
+//     - Line height
+// - Button
+// - Card
+// - Chip
+// - Code
+// - Dropdown
+// - Header
+// - Menu panel
+// - Misc
+// - Modal
+// - Nav
+// - Picker
+// - Progress
+// - Social
+// - Table
+// - Text field
+//   - Text field box
+
+
+
+// Basics - Colours
+
+$black-primary:   rgba(0, 0, 0, .87) !default;
+$black-secondary: rgba(0, 0, 0, .6) !default;
+$black-hint:      rgba(0, 0, 0, .38) !default;
+$black-divider:   rgba(0, 0, 0, .12) !default;
+
+$dark-1:          #000000 !default;
+$dark-2:          #212121 !default;
+$dark-3:          #303030 !default;
+$dark-4:          #424242 !default;
+$dark-active:     rgba(204, 204, 204, .25) !default;
+$dark-hover:      rgba(204, 204, 204, .125) !default;
+
+$light-1:         #e0e0e0 !default;
+$light-2:         #f5f5f5 !default;
+$light-3:         #fafafa !default;
+$light-4:         #ffffff !default;
+$light-active:    rgba(153, 153, 153, .4) !default;
+$light-hover:     rgba(153, 153, 153, .2) !default;
+
+$white-primary:   rgba(255, 255, 255, 1) !default;
+$white-secondary: rgba(255, 255, 255, .7) !default;
+$white-hint:      rgba(255, 255, 255, .5) !default;
+$white-divider:   rgba(255, 255, 255, .12) !default;
+
+
+// Maker Colors
+
+//* $maker-teal -->  use unquote('$tertiary')
+$maker-orange: #f5b13d;
+$maker-blue: #08529b;
+$maker-headline: #291a42;
+//* $maker-body --> use unquote('$primary')
+
+
+// Maker Gradients
+
+$primary-gradient-start: rgba(182, 237, 231, .38);
+$primary-gradient-end: rgba(253, 193, 52, .15);
+
+$maker-primary-gradient:  linear-gradient(180deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+$maker-teal-gradient:     linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
+$maker-orange-gradient:   linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
+$maker-blue-gradient:     linear-gradient(hsla(210, 50%, 90%, 1), hsla(210, 50%, 86%, 1));
+
+
+// Basics - Misc
+
+$border-radius:     2px !default;
+$border-width:      1px !default;
+$control-height:    36px !default;
+$control-height-lg: 40px !default;
+$control-height-sm: 32px !default;
+
+
+
+// Basics - Shadows
+
+$shadow-color-1: rgba(0, 0, 0, .14) !default;
+$shadow-color-2: rgba(0, 0, 0, .12) !default;
+$shadow-color-3: rgba(0, 0, 0, .4) !default;
+
+$shadow-24dp:    0 24px 38px 3px $shadow-color-1, 0 9px 46px 8px $shadow-color-2, 0 11px 15px -7px $shadow-color-3 !default;
+$shadow-16dp:    0 16px 24px 2px $shadow-color-1, 0 6px 30px 5px $shadow-color-2, 0 8px 10px -5px $shadow-color-3 !default;
+$shadow-12dp:    0 12px 16px 1px $shadow-color-1, 0 4px 22px 3px $shadow-color-2, 0 6px 7px -4px $shadow-color-3 !default;
+$shadow-8dp:     0 8px 10px 1px $shadow-color-1, 0 3px 14px 2px $shadow-color-2, 0 5px 5px -3px $shadow-color-3 !default;
+$shadow-6dp:     0 6px 10px 0 $shadow-color-1, 0 1px 18px 0 $shadow-color-2, 0 3px 5px -1px $shadow-color-3 !default;
+$shadow-4dp:     0 4px 5px 0 $shadow-color-1, 0 1px 10px 0 $shadow-color-2, 0 2px 4px -1px $shadow-color-3 !default;
+$shadow-3dp:     0 3px 4px 0 $shadow-color-1, 0 1px 8px 0 $shadow-color-2, 0 3px 3px -2px $shadow-color-3 !default;
+$shadow-2dp:     0 2px 2px 0 $shadow-color-1, 0 1px 5px 0 $shadow-color-2, 0 3px 1px -2px $shadow-color-3 !default;
+
+
+
+// Basics - Spacers
+
+$container-max-width: 1110px !default;
+
+$spacer-xs:           4px !default;
+$spacer-sm:           8px !default;
+$spacer:              16px !default;
+$spacer-lg:           24px !default;
+$spacer-xl:           48px !default;
+
+$spacer-x:            $spacer !default;
+$spacer-x-inline:     $spacer-xs !default;
+$spacer-x-lg:         $spacer-lg !default;
+$spacer-y:            $spacer !default;
+$spacer-y-inline:     $spacer-sm !default;
+$spacer-y-lg:         $spacer-lg !default;
+
+
+
+// Basics - Transition
+
+$transition-duration:        .3s !default;
+$transition-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
+
+
+
+// Basics - Typography - Font family
+
+$font-family-monospace:  'Roboto Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-serif:      'Roboto Slab', Georgia, 'Times New Roman', Times, serif !default;
+
+
+
+// Basics - Typography - Font size
+
+$font-size-base:      14px !default;
+
+$font-size-display-1: 112px !default;
+$font-size-display-2: 56px !default;
+$font-size-h1:        36px !default;
+$font-size-h2:        34px !default;
+$font-size-h3:        24px !default;
+$font-size-h4:        20px !default;
+$font-size-h5:        16px !default;
+$font-size-h6:        14px !default;
+$font-size-body:      14px !default;
+$font-size-caption:   12px !default;
+
+$font-size-sm:     percentage($font-size-caption / $font-size-body) !default;
+
+$material-icon-size:  24px !default;
+$category-icon-size:  14px !default;
+$material-avatar-size: 32px !default;
+
+
+// Basics - Typography - Font weight
+
+$font-weight-medium:    500 !default;
+$font-weight-regular:   400 !default;
+$font-weight-light:     300 !default;
+
+$font-weight-display-1: $font-weight-light !default;
+$font-weight-display-2: $font-weight-regular !default;
+$font-weight-h1:        $font-weight-regular !default;
+$font-weight-h2:        $font-weight-regular !default;
+$font-weight-h3:        $font-weight-regular !default;
+$font-weight-h4:        $font-weight-medium !default;
+$font-weight-h5:        $font-weight-regular !default;
+$font-weight-h6:        $font-weight-medium !default;
+$font-weight-body:      $font-weight-regular !default;
+$font-weight-caption:   $font-weight-regular !default;
+
+
+
+// Basics - Typography - Letter spacing
+
+$letter-spacing-display-1: -.04em !default;
+$letter-spacing-display-2: -.02em !default;
+$letter-spacing-h1:        0 !default;
+$letter-spacing-h2:        0 !default;
+$letter-spacing-h3:        0 !default;
+$letter-spacing-h4:        .02em !default;
+$letter-spacing-h5:        .04em !default;
+$letter-spacing-h6:        0 !default;
+$letter-spacing-body:      0 !default;
+$letter-spacing-caption:   0 !default;
+
+
+
+// Basics - Typography - Line height
+
+$line-height-base:      1.428572 !default; // 20px
+
+$line-height-display-1: 1 !default;        // 112px
+$line-height-display-2: 1.035714 !default; // 58px
+$line-height-h1:        1.066667 !default; // 48px
+$line-height-h2:        1.176471 !default; // 40px
+$line-height-h3:        1.333333 !default; // 32px
+$line-height-h4:        1.4 !default;      // 28px
+$line-height-h5:        1.5 !default;      // 24px
+$line-height-h6:        1.428572 !default; // 20px
+$line-height-body:      1.428572 !default; // 20px
+$line-height-caption:   1.5 !default;      // 18px
+
+
+
+// Button
+
+$btn-bg-dark:              unquote('$tertiary') !default;
+$btn-bg-light:             $light-4 !default;
+$btn-bg-active-dark:       $dark-active !default;
+$btn-bg-active-light:      $light-active !default;
+$btn-bg-disabled-dark:     $white-divider !default;
+$btn-bg-disabled-light:    $black-divider !default;
+$btn-bg-hover-dark:        $dark-hover !default;
+$btn-bg-hover-light:       $light-hover !default;
+$btn-bg-overlay-dark:      $black-divider !default;
+$btn-bg-overlay-light:     $black-divider !default;
+$btn-border-radius:        $border-radius !default;
+$btn-box-shadow:           $shadow-2dp !default;
+$btn-box-shadow-active:    $shadow-8dp !default;
+$btn-color-dark:           unquote('$primary') !default;
+$btn-color-light:          unquote('$primary') !default;
+$btn-color-disabled-dark:  rgba(0, 0, 0, .3) !default;
+$btn-color-disabled-light: rgba(0, 0, 0, .26) !default;
+$btn-height:               $control-height !default;
+$btn-height-lg:            $control-height-lg !default;
+$btn-height-sm:            $control-height-sm !default;
+$btn-font-size:            $font-size-base !default;
+$btn-font-size-lg:         ($btn-font-size + 1) !default;
+$btn-font-size-sm:         ($btn-font-size - 1) !default;
+$btn-font-weight:          500 !default;
+$btn-line-height:          1 !default;
+$btn-padding-x:            $spacer !default;
+$btn-padding-x-lg:         $spacer !default;
+$btn-padding-x-sm:         $spacer !default;
+$btn-padding-y:            (($btn-height - $btn-font-size * $btn-line-height) / 2) !default;
+$btn-padding-y-lg:         (($btn-height-lg - $btn-font-size-lg * $btn-line-height) / 2) !default;
+$btn-padding-y-sm:         (($btn-height-sm - $btn-font-size-sm * $btn-line-height) / 2) !default;
+
+
+
+// Card
+
+$card-avatar-size:      $control-height !default;
+$card-bg-dark:          $dark-4 !default;
+$card-bg-light:         $light-4 !default;
+$card-border-radius:    $border-radius !default;
+$card-box-shadow:       $shadow-2dp !default;
+$card-box-shadow-hover: $shadow-8dp !default;
+$card-child-bg-dark:    $dark-2 !default;
+$card-child-bg-light:   $light-2 !default;
+$card-color-dark:       unquote('$primary') !default;
+$card-color-light:      unquote('$primary') !default;
+$card-inner-spacer-x:   $spacer-x !default;
+$card-inner-spacer-y:   $spacer-y !default;
+$card-padding-x:        $spacer !default;
+$card-padding-y:        $spacer !default;
+
+
+
+// Chip
+
+$chip-bg-dark:          $dark-hover !default;
+$chip-bg-light:         $light-hover !default;
+$chip-box-shadow:       $shadow-2dp !default;
+$chip-font-size:        ($font-size-base - 1) !default;
+$chip-height:           $control-height-sm !default;
+$chip-icon-color-dark:  $black-secondary !default;
+$chip-icon-color-light: $black-secondary !default;
+$chip-inner-spacer-x:   $spacer-x-inline !default;
+$chip-line-height:      $line-height-base !default;
+$chip-padding-x:        $spacer !default;
+$chip-padding-y:        (($chip-height - $chip-font-size * $chip-line-height) / 2) !default;
+$chip-sm-scale:         .75 !default;
+
+
+
+// Code
+
+$code-bg-dark:       $dark-2 !default;
+$code-bg-light:      $light-2 !default;
+$code-border-radius: $border-radius !default;
+$code-color-dark:    #bd4147 !default;
+$code-color-light:   #bd4147 !default;
+$code-font-size:     $font-size-sm !default;
+$code-padding:       .2em .4em !default;
+
+$kbd-bg:             #333333 !default;
+$kbd-color:          #ffffff !default;
+
+$pre-padding:        $card-padding-y $card-padding-x !default;
+
+
+
+// Dropdown
+
+$dropdown-bg-dark:             $dark-4 !default;
+$dropdown-bg-light:            $light-4 !default;
+$dropdown-border-radius:       $border-radius !default;
+$dropdown-box-shadow:          $shadow-8dp !default;
+$dropdown-font-size:           ($font-size-base - 1) !default;
+$dropdown-inner-spacer-x:      $spacer-x !default;
+$dropdown-line-height:         1.5 !default;
+$dropdown-link-bg-hover-dark:  $white-divider !default;
+$dropdown-link-bg-hover-light: $black-divider !default;
+$dropdown-link-height:         $control-height-sm !default;
+$dropdown-link-padding-x:      $spacer-lg !default;
+$dropdown-link-padding-y:      (($dropdown-link-height - $dropdown-font-size * $dropdown-line-height) / 2) !default;
+$dropdown-padding-x:           0 !default;
+$dropdown-padding-y:           $spacer !default;
+
+
+
+// Header
+
+$header-box-shadow:         $shadow-4dp !default;
+$header-height:             56px !default;
+$header-item-overlay-dark:  $white-divider !default;
+$header-item-overlay-light: $black-divider !default;
+$header-inner-spacer-x:     $spacer-x-inline !default;
+$header-padding-x:          $spacer-sm !default;
+$header-padding-y:          $spacer-sm !default;
+
+
+
+// Menu panel
+
+$menu-panel-bg-dark:            $dark-4 !default;
+$menu-panel-bg-light:           $light-4 !default;
+$menu-panel-border-radius:      $border-radius !default;
+$menu-panel-box-shadow:         $shadow-24dp !default;
+$menu-panel-inner-spacer-x:     $spacer-x-inline !default;
+$menu-panel-inner-spacer-y:     $spacer-y-inline !default;
+$menu-panel-item-overlay-dark:  $dark-hover !default;
+$menu-panel-item-overlay-light: $light-hover !default;
+$menu-panel-padding-x:          $spacer-lg !default;
+$menu-panel-padding-y:          $spacer-lg !default;
+
+
+
+// Misc
+
+$admin-breakpoint:     700px !default;
+$admin-nav-max-height: 500px !default;
+$admin-nav-width:      20% !default;
+$topic-body-width:     700px !default;
+
+
+
+// Modal
+
+$modal-backdrop-bg-dark:   $black-hint !default;
+$modal-backdrop-bg-light:  $black-hint !default;
+$modal-bg-dark:            $dark-4 !default;
+$modal-bg-light:           $light-4 !default;
+$modal-border-color-dark:  $dark-1 !default;
+$modal-border-color-light: $light-1 !default;
+$modal-border-width:       $border-width !default;
+$modal-border-radius:      $border-radius !default;
+$modal-box-shadow:         $shadow-24dp !default;
+$modal-footer-padding-x:   $spacer-sm !default;
+$modal-footer-padding-y:   $spacer-sm !default;
+$modal-inner-spacer-x:     $spacer-x !default;
+$modal-inner-spacer-y:     $spacer-y !default;
+$modal-padding-x:          $spacer !default;
+$modal-padding-y:          $spacer !default;
+
+
+// Nav
+
+$nav-link-border-radius:  $border-radius !default;
+$nav-link-font-size:      $font-size-base !default;
+$nav-link-height:         $control-height !default;
+$nav-link-line-height:    1 !default;
+$nav-link-opacity:        .7 !default;
+$nav-link-opacity-active: 1 !default;
+$nav-link-padding-x:      $spacer !default;
+$nav-link-padding-y:      (($control-height - $nav-link-font-size * $nav-link-line-height) / 2) !default;
+$nav-item-spacer-x:       1px !default;
+$nav-item-spacer-y:       1px !default;
+
+
+
+// Picker
+
+$picker-bg-dark:       $modal-bg-dark !default;
+$picker-bg-light:      $modal-bg-light !default;
+$picker-border-radius: $border-radius !default;
+$picker-box-shadow:    $modal-box-shadow !default;
+$picker-cell-size:     40px !default;
+$picker-padding-x:     $spacer-sm !default;
+$picker-padding-y:     $spacer-sm !default;
+
+
+
+// Progress
+
+$progress-bg:     unquote('$tertiary') !default;
+$progress-height: 4px !default;
+$progress-mask:   $white-secondary !default;
+
+
+
+// Social
+
+$social-cas-color:       #70ba61 !default;
+$social-facebook-color:  #3b5998 !default;
+$social-github-color:    #181717 !default;
+$social-google-color:    #4285f4 !default;
+$social-instagram-color: #e4405f !default;
+$social-twitter-color:   #1da1f2 !default;
+$social-yahoo-color:     #440099 !default;
+
+
+
+// Table
+
+$table-bg-dark:            $dark-4 !default;
+$table-bg-light:           $light-4 !default;
+$table-bg-hover-dark:      $dark-2 !default;
+$table-bg-hover-light:     $light-2 !default;
+$table-border-radius:      $border-radius !default;
+$table-border-width:       $border-width !default;
+$table-border-color-dark:  $white-divider !default;
+$table-border-color-light: $black-divider !default;
+$table-box-shadow:         $shadow-2dp !default;
+$tbody-cell-height:        48px !default;
+$tbody-cell-padding-x:     12px !default;
+$tbody-cell-padding-y:     12px !default;
+$tbody-color-dark:         unquote('$primary') !default;
+$tbody-color-light:        unquote('$primary') !default;
+$tbody-font-size:          13px !default;
+$thead-cell-height:        56px !default;
+$thead-cell-padding-x:     12px !default;
+$thead-cell-padding-y:     12px !default;
+$thead-color-dark:         $white-secondary !default;
+$thead-color-light:        $black-secondary !default;
+$thead-color-sorting:      unquote('$primary') !default;
+$thead-font-size:          12px !default;
+
+
+
+// Text field
+
+$text-field-bg-dark:                     rgba(255, 255, 255, .1) !default;
+$text-field-bg-light:                    rgba(0, 0, 0, .06) !default;
+$text-field-border-color-dark:           rgba(255, 255, 255, .7) !default;
+$text-field-border-color-light:          rgba(0, 0, 0, .42) !default;
+$text-field-border-color-disabled-dark:  rgba(255, 255, 255, .5) !default;
+$text-field-border-color-disabled-light: rgba(0, 0, 0, .26) !default;
+$text-field-border-color-hover-dark:     rgba(255, 255, 255, 1) !default;
+$text-field-border-color-hover-light:    rgba(0, 0, 0, .87) !default;
+$text-field-border-radius:               $border-radius !default;
+$text-field-border-width:                $border-width !default;
+$text-field-font-size:                   16px !default;
+$text-field-height:                      56px !default;
+$text-field-line-height:                 1.5 !default;
+$text-field-margin-y:                    $spacer-y-inline !default;
+$text-field-min-width:                   200px !default;
+$text-field-padding-x:                   12px !default;
+$text-field-padding-y:                   (($text-field-height - $text-field-border-width * 2 - $text-field-font-size * $text-field-line-height) / 2) !default;

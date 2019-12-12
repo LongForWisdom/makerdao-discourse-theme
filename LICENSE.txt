@@ -1,3 +1,4 @@
+Copyright (c) 2019: MakerDAO
 Copyright (c) 2016: Sam Saffron
 
 MIT License

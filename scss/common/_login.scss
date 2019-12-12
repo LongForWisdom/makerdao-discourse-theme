@@ -1,0 +1,179 @@
+.btn {
+  &#login-link,
+  &#new-account-link {
+    &:hover,
+    &:focus,
+    &.btn-hover {
+      .discourse-no-touch & {
+        background-color: color-chooser($btn-bg-hover-dark, $btn-bg-hover-light);
+      }
+    }
+
+    &:active {
+      .discourse-no-touch & {
+        background-color: color-chooser($btn-bg-active-dark, $btn-bg-active-light);
+      }
+    }
+  }
+}
+
+.create-account,
+.login-modal {
+  td {
+    input,
+    label {
+      margin-bottom: $text-field-margin-y;
+    }
+  }
+
+  tr {
+    &:not(.instructions) {
+      td {
+        padding-top: 0;
+      }
+    }
+  }
+
+  #login-buttons:not(.hidden) {
+    min-height: 0;
+    padding: $modal-inner-spacer-y $modal-padding-x $modal-inner-spacer-y $modal-inner-spacer-x;
+
+    .create-account & {
+      padding-top: $modal-inner-spacer-y;
+    }
+
+    .btn {
+      margin: 0 0 ($modal-inner-spacer-y / 2);
+      width: 100%;
+
+      &:first-child {
+        margin-top: auto;
+      }
+
+      &:last-child {
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  .login-modal {
+    #login-buttons:not(.hidden) {
+      .btn {
+        &:first-child {
+          margin-top: auto;
+        }
+
+        &:last-child {
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+}
+
+.create-account {
+  &.d-modal {
+    tr {
+      &.input {
+        input,
+        label {
+          margin-bottom: $text-field-margin-y;
+        }
+      }
+    }
+
+    .login-form {
+      &::after,
+      &::before {
+        display: none;
+      }
+
+      form {
+        margin-bottom: 0;
+        padding: $modal-inner-spacer-y $modal-inner-spacer-x $modal-inner-spacer-y $modal-padding-x;
+      }
+
+      tr {
+        margin-top: $modal-inner-spacer-y;
+
+        &:first-child,
+        &.instructions {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .modal-body {
+      padding: 0;
+    }
+  }
+
+  table {
+    td {
+      &.label {
+        width: auto;
+      }
+    }
+  }
+
+  .disclaimer {
+    margin: $modal-footer-padding-y $modal-inner-spacer-x;
+    text-align: right;
+  }
+
+  .modal-body {
+    form {
+      margin-bottom: 0;
+    }
+  }
+
+  .modal-footer {
+    flex-wrap: wrap;
+  }
+}
+
+.forgot-password-modal {
+  input[type='text'] {
+    margin-bottom: 0;
+  }
+}
+
+#login-form {
+  td {
+    padding-right: 0;
+  }
+
+  #credentials {
+    tr:first-of-type {
+      margin-bottom: ($modal-inner-spacer-y - $text-field-margin-y);
+    }
+  }
+}
+
+.login-form {
+  .tip {
+    &:empty {
+      + td {
+        max-width: none;
+        min-height: 0;
+      }
+    }
+  }
+}
+
+.login-modal {
+  &.d-modal {
+    #credentials {
+      padding: 0;
+    }
+
+    .modal-body {
+      align-items: stretch;
+      padding: 0;
+    }
+  }
+
+  #login-form {
+    padding: $modal-inner-spacer-y $modal-inner-spacer-x $modal-inner-spacer-y $modal-padding-x;
+  }
+}

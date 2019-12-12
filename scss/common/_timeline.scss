@@ -1,0 +1,132 @@
+.fa-circle.tracking::before {
+  content: 'track_changes';
+}
+
+.fa-circle-o.regular::before {
+  content: 'notifications';
+}
+
+.fa-exclamation-circle.watching::before {
+  content: 'notifications_active';
+}
+
+.fa-times-circle.muted::before {
+  content: 'notifications_off';
+}
+
+.timeline-container {
+  .topic-timeline {
+    div > button,
+    span > button {
+      &.btn {
+        margin-right: $spacer-sm;
+      }
+    }
+
+    .back-button {
+      @include btn-sm;
+    }
+
+    .dropdown-menu,
+    .popup-menu {
+      @include dropdown-menu;
+
+      a,
+      .btn {
+        @include dropdown-link;
+      }
+
+      h3 {
+        @include dropdown-header;
+      }
+
+      .btn {
+        text-transform: none;
+      }
+    }
+
+    .now-date {
+      color: color-chooser($white-secondary, $black-secondary);
+      margin-top: 0;
+    }
+
+    .start-date {
+      color: color-chooser($white-secondary, $black-secondary);
+    }
+
+    .timeline-ago {
+      color: color-chooser($white-secondary, $black-secondary);
+    }
+
+    .timeline-controls {
+      margin-bottom: $spacer;
+    }
+
+    .timeline-footer-controls {
+      line-height: inherit;
+      margin-top: $spacer;
+
+      .widget-component-connector {
+        vertical-align: middle;
+      }
+    }
+
+    .timeline-handle {
+      background-color: $progress-bg;
+      border-radius: 2px;
+      width: $progress-height;
+    }
+
+    .timeline-last-read {
+      margin-left: ($progress-height * -1);
+
+      i {
+        &.progress {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .timeline-padding {
+      background-color: $progress-bg;
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      width: $progress-height;
+
+      &::before {
+        background-color: inherit;
+        background-image: linear-gradient(to right, $progress-mask, $progress-mask);
+        border-radius: 2px 2px 0 0;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      ~ .timeline-padding {
+        &,
+        &::before {
+          border-radius: 0 0 2px 2px;
+        }
+      }
+    }
+
+    .timeline-scrollarea {
+      border-left: 0;
+      margin-top: $spacer;
+      margin-bottom: $spacer;
+      margin-left: $spacer-sm;
+    }
+
+    .timeline-scroller {
+      margin-left: 0;
+    }
+
+    .timeline-scroller-content {
+      padding-left: $spacer;
+    }
+  }
+}
