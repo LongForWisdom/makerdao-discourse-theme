@@ -127,8 +127,13 @@
     width: auto;
   }
 
-  .category-name {
+  .category-text-title > .category-name {
+    font-size: 1.3em;
     line-height: inherit;
+  }
+
+  .subcategory > .badge-category > .category-name {
+    font-size: .9em;
   }
 
   .subcategories {

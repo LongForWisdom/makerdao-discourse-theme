@@ -3,6 +3,8 @@
 ## Current Status
 Initial version with Foundation Styles implemented.
 
+Grunt is used to compile the theme into the theme folder during development. The theme display folders (desktop, common, mobile) must be at the root of the directory to import a theme directly to Discourse.
+
 ## Onboarding
 It's possible to preview and test this forum theme without installing a discourse instance using the Discourse Theme Creator tool located at:
 https://theme-creator.discourse.org/

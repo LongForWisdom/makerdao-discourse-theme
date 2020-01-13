@@ -82,7 +82,7 @@ $primary-gradient-start: rgba(182, 237, 231, .38);
 $primary-gradient-end: rgba(253, 193, 52, .15);
 
 $maker-primary-gradient:  linear-gradient(180deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
-$maker-teal-gradient:     linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
+$maker-green-gradient:     linear-gradient(hsla(168, 50%, 90%, 1), hsla(168, 50%, 86%, 1));
 $maker-orange-gradient:   linear-gradient(hsla(39, 70%, 91%, 1), hsla(39, 70%, 86%, 1));
 $maker-blue-gradient:     linear-gradient(hsla(210, 50%, 90%, 1), hsla(210, 50%, 86%, 1));
 
@@ -143,8 +143,8 @@ $transition-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
 // Basics - Typography - Font family
 
 $font-family-monospace:  'Roboto Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
-$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !default;
-$font-family-serif:      'Roboto Slab', Georgia, 'Times New Roman', Times, serif !default;
+$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-serif:      Georgia, 'Times New Roman', Times, serif !default;
 
 
 

@@ -211,16 +211,19 @@
   &.medium,
   &.small {
     flex: 0 0 auto;
-    margin: 0 0 $spacer-y;
+    margin: 0 0 $spacer-y $spacer-y * 2;
     min-height: 0;
     width: 100%;
 
     @media (min-width: 569px) {
-      margin-right: $spacer-x;
+      display: inline-block;
+      margin: 0 $spacer-x 0 0;
       width: calc(50% - #{$spacer-x});
     }
 
     @media (min-width: ($container-max-width + 1px)) {
+      display: inline-block;
+      margin: 0 $spacer-x 0 0;
       width: calc(100% / 3 - #{$spacer-x});
     }
 

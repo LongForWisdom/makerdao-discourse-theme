@@ -4,9 +4,71 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt)
   require('time-grunt')(grunt)
 
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
   // project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+    watch: {
+      css: {
+        files: ['./scss/*.scss'],
+        tasks: [
+          'scsslint:project', 
+          'sass:common',
+          'sass:desktop',
+          'sass:mobile', 
+          'concat:common',
+          'concat:desktop',
+          'concat:mobile', 
+          'postcss:common',
+          'postcss:desktop',
+          'postcss:mobile', 
+        ]
+      },
+      css: {
+        files: ['./scss/mixins/*.scss'],
+        tasks: [
+          'scsslint:project', 
+          'sass:common',
+          'sass:desktop',
+          'sass:mobile', 
+          'concat:common',
+          'concat:desktop',
+          'concat:mobile', 
+          'postcss:common',
+          'postcss:desktop',
+          'postcss:mobile', 
+        ]
+      },
+      css: {
+        files: ['./scss/common/*.scss'],
+        tasks: [
+          'scsslint:project', 
+          'sass:common', 
+          'concat:common',
+          'postcss:common'
+        ]
+      },
+      css: {
+        files: ['./scss/desktop/*.scss'],
+        tasks: [
+          'scsslint:project',
+          'sass:desktop',
+          'concat:desktop', 
+          'postcss:desktop'
+        ]
+      },
+      css: {
+        files: ['./scss/mobile/*.scss'],
+        tasks: [
+          'scsslint:project', 
+          'sass:mobile', 
+          'concat:mobile',
+          'postcss:mobile'
+        ]
+      }
+    },
 
     concat: {
       options: {
