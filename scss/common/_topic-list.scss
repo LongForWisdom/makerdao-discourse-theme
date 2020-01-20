@@ -436,11 +436,16 @@
   }
 
   .pinned {
-    background-image: $maker-teal-gradient;
+    background-image: $maker-green-gradient;
   }
 
   .d-icon.pinned {
     background: none;
+  }
+
+  .topic-status .d-icon {
+    height: 15px;
+    width: 20px;
   }
 }
 
@@ -452,7 +457,7 @@
   .discourse-tags {
     @include typography-caption;
 
-    margin-top: $spacer-y-inline;
+    // margin-top: $spacer-y-inline;
 
     .discourse-tag {
       &.box {
@@ -485,11 +490,6 @@
 .topic-statuses {
   margin-top: $spacer-x-inline;
   margin-right: $spacer-x-inline;
-
-  .topic-status .d-icon {
-    height: auto;
-    width: auto;
-  }
 }
 
 .topic-thumbnail {

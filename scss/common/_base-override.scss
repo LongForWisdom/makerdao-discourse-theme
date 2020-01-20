@@ -66,6 +66,22 @@ tbody {
         opacity: 1;
       }
     }
+
+    // fix about/faq active colors when active is set properly
+    &.nav-item-about,
+    &.nav-item-faq,
+    &.nav-item-tos,
+    &.nav-item-privacy {
+      color: unquote('$tertiary');
+
+      > .active {
+        color: unquote('$tertiary');
+
+        &:hover {
+          color: $white-primary;
+        }
+      }
+    }
   }
 }
 

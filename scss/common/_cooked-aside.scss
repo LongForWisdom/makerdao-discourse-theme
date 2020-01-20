@@ -98,6 +98,7 @@ aside {
     margin-bottom: $card-inner-spacer-y;
 
     blockquote {
+      background: $maker-blue-gradient;
       width: auto !important;
 
       &:last-child {
@@ -139,7 +140,7 @@ aside {
 
     .title {
       align-items: center;
-      background-color: color-chooser($card-child-bg-dark, $card-child-bg-light);
+      background-color: $blue-gradient-top;
       border-left: 0;
       color: color-chooser($white-secondary, $black-secondary);
       display: flex;
@@ -161,7 +162,7 @@ aside {
 
 div {
   &.poll {
-    background-color: color-chooser($card-child-bg-dark, $card-child-bg-light);
+    background-image: $maker-orange-gradient;
     border: 0;
     margin: 0 ($card-padding-x * -1) $card-inner-spacer-y;
     width: calc(100% + #{$card-padding-x * 2});
@@ -181,7 +182,7 @@ div {
       li[data-poll-option-id]::before {
         @extend %material-icons;
 
-        content: 'radio_button_unchecked';
+        // content: 'radio_button_unchecked';
       }
     }
 
@@ -210,7 +211,7 @@ div {
     }
 
     .poll-buttons {
-      border-top-color: color-chooser($table-border-color-dark, $table-border-color-light);
+      border-top: 1px solid $maker-blue;
       padding: ($card-padding-y / 2) ($card-padding-x - $card-inner-spacer-x);
 
       a {
@@ -224,20 +225,39 @@ div {
 
       .btn {
         @include btn-raised-reverse;
+        &:hover {
+          background-color: $maker-blue;
+          color: $white-primary;
+        }
       }
 
       .fa-check-square-o,
       .fa-dot-circle-o {
         color: unquote('$tertiary');
       }
+
+      .toggle-status {
+        border: 1px solid $maker-blue;
+
+        .d-icon,
+        .d-button-label {
+          color: $maker-blue;
+
+          &:hover {
+            color: $white-primary;
+          }
+        }
+      }
     }
 
     .poll-container {
+      border-right: 1px solid $maker-blue;
       padding: $card-padding-y $card-padding-x;
     }
 
     .poll-info {
       border-left-color: color-chooser($table-border-color-dark, $table-border-color-light);
+      color: $maker-blue;
       padding: $card-padding-y $card-padding-x;
 
       p {
@@ -307,7 +327,7 @@ div {
       .chosen {
         .bar,
         .bar-back {
-          background-color: $progress-bg;
+          background-color: $maker-blue;
         }
       }
 

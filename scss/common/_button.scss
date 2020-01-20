@@ -118,7 +118,7 @@
 // Nav Pills
 
 .nav-pills > li {
-  border: 1px solid unquote('$primary');
+  border: 1px solid unquote('$tertiary');
   border-radius: 150px;
   display: flex;
   margin-right: 2px;
@@ -146,7 +146,7 @@
 
   a {
     background: none;
-    color: unquote('$primary');
+    color: unquote('$tertiary');
     margin: auto;
     min-height: 30px;
     padding: 5px 16px;

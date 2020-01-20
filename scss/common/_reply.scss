@@ -81,6 +81,7 @@
           border: 0;
           height: auto;
           margin: 0;
+          min-height: 0;
           padding: $card-padding-y $card-padding-x;
 
           @include focus-hover {
@@ -161,7 +162,7 @@
   }
 
   .category-input {
-    margin: 0 $card-inner-spacer-x ($card-inner-spacer-y / 2) 0;
+    margin: 0 ($card-inner-spacer-x / 2) ($card-inner-spacer-y / 2) 0;
   }
 
   .composer-bottom-right {
@@ -214,7 +215,8 @@
   .d-editor-button-bar {
     .btn {
       font-size: $btn-font-size-sm;
-      padding: $btn-padding-y-sm $card-inner-spacer-x;
+      margin-right: 1px;
+      padding: 5px $card-inner-spacer-x;
     }
 
     .select-kit-body {
@@ -238,6 +240,7 @@
     border: 0;
     border-left: 1px solid color-chooser($white-divider, $black-divider);
     border-radius: 0;
+    margin-top: 15px;
 
     img:not(.avatar):not(.emoji):not(.site-icon):not(.thumbnail) {
       height: auto;
@@ -323,6 +326,8 @@
 
   #reply-title {
     margin: 0;
+    min-height: 0;
+    padding: 7px 10px;
   }
 
   .reply-to {
@@ -454,7 +459,7 @@
   }
 
   .title-input {
-    margin: 0 $card-inner-spacer-x ($card-inner-spacer-y / 2) 0;
+    margin: 0 ($card-inner-spacer-x / 2) ($card-inner-spacer-y / 2) 0;
   }
 
   .toggle-preview {

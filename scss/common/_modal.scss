@@ -4,7 +4,7 @@
   border-radius: $modal-border-radius;
   box-shadow: $modal-box-shadow;
   outline: 0;
-  width: calc(100% - #{$spacer * 2});
+  // width: calc(100% - #{$spacer * 2});
 }
 
 .bootbox.modal {
@@ -601,6 +601,10 @@
     h3 {
       @include typography-h4;
     }
+  }
+
+  .modal-close {
+    padding: 0 10px 5px;
   }
 }
 

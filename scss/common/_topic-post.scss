@@ -62,6 +62,11 @@ nav {
           color: unquote('$love');
         }
       }
+
+      &.widget-button:not(.like-count) {
+        margin-right: 4px;
+        margin-left: 0;
+      }
     }
 
     .actions {
@@ -715,6 +720,7 @@ section {
 
   .buttons {
     margin-right: ($card-inner-spacer-x * -1);
+    width: 62px;
 
     .btn {
       @include btn-raised-reverse;
@@ -1045,6 +1051,7 @@ section {
     @include typography-h1;
 
     font-family: $font-family-serif;
+    font-size: 30px;
     font-weight: normal;
     margin: 0 0 $spacer-y;
     overflow: visible;
@@ -1076,6 +1083,11 @@ section {
 
     &:empty {
       display: none;
+    }
+
+    .topic-status .d-icon {
+      height: 25px;
+      width: 35px;
     }
   }
 }
