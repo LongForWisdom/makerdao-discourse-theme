@@ -1145,7 +1145,7 @@ aside.quote .expanded-quote > :last-child:empty {
 aside.quote .title {
   -ms-flex-align: center;
       align-items: center;
-  background: linear-gradient(#d9e6f2, #c9dbed);
+  background-color: #d9e6f2;
   border-left: 0;
   color: color-chooser(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.6));
   display: -ms-flexbox;
